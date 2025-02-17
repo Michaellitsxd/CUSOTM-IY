@@ -12759,7 +12759,7 @@ task.spawn(function()
 
 	if success then
 		if currentVersion ~= latestVersionInfo.Version then
-			notify('MODDED','This is a modded version of Infinite yeild made by MichaelTM#0001 | JustMichaelTM Was here')
+			notify('MODDED','This is a modded version of Infinite yeild made by Oxycodone._')
 		end
 
 		if latestVersionInfo.Announcement and latestVersionInfo.Announcement ~= '' then
