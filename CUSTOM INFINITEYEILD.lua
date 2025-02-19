@@ -4299,6 +4299,7 @@ CMDs[#CMDs + 1] = {NAME = 'cframeflyspeed  / cflyspeed [num]', DESC = 'Sets cfly
 CMDs[#CMDs + 1] = {NAME = 'qefly [true / false]', DESC = 'enables or disables the Q and E hotkeys for fly'}
 CMDs[#CMDs + 1] = {NAME = 'vehiclenoclip / vnoclip', DESC = 'Turns off vehicle collision'}
 CMDs[#CMDs + 1] = {NAME = 'vehicleclip / vclip / unvnoclip', DESC = 'Enables vehicle collision'}
+CMDs[#CMDs + 1] = {NAME = 'irus / irusspy', DESC = 'Irus Remote Spy'}
 CMDs[#CMDs + 1] = {NAME = 'float /  platform', DESC = 'Spawns a platform beneath you causing you to float'}
 CMDs[#CMDs + 1] = {NAME = 'unfloat / noplatform', DESC = 'Removes the platform'}
 CMDs[#CMDs + 1] = {NAME = 'swim', DESC = 'Allows you to swim in the air'}
@@ -8287,6 +8288,11 @@ end)
 addcmd('f3x',{'fex'},function(args, speaker)
 	loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
 end)
+
+addcmd('irus',{'irisspy'},function(args, speaker)
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Michaellitsxd/CUSOTM-IY/refs/heads/main/loaderiris.lua'))()
+end)
+
 
 addcmd('partpath',{'partname'},function(args, speaker)
 	selectPart()
