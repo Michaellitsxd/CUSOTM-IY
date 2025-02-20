@@ -4429,6 +4429,7 @@ CMDs[#CMDs + 1] = {NAME = 'clearnilinstances / nonilinstances / cni', DESC = 'Re
 CMDs[#CMDs + 1] = {NAME = 'destroyheight / dh [num]', DESC = 'Sets FallenPartsDestroyHeight'}
 CMDs[#CMDs + 1] = {NAME = '', DESC = ''}
 CMDs[#CMDs + 1] = {NAME = 'fullbright / fb (CLIENT)', DESC = 'Makes the map brighter / more visible'}
+CMDs[#CMDs + 1] = {NAME = 'telekenisis / tele', DESC = 'Allows you to move unanchored parts'}
 CMDs[#CMDs + 1] = {NAME = 'loopfullbright / loopfb (CLIENT)', DESC = 'Makes the map brighter / more visible but looped'}
 CMDs[#CMDs + 1] = {NAME = 'unloopfullbright / unloopfb', DESC = 'Unloops fullbright'}
 CMDs[#CMDs + 1] = {NAME = 'ambient [num] [num] [num] (CLIENT)', DESC = 'Changes ambient'}
@@ -8291,6 +8292,10 @@ end)
 
 addcmd('irus',{'irisspy'},function(args, speaker)
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Michaellitsxd/CUSOTM-IY/refs/heads/main/loaderiris.lua'))()
+end)
+
+addcmd('telekenisis',{'tele'},function(args, speaker)
+	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/randomstring0/Qwerty/refs/heads/main/qwerty11.lua"))()
 end)
 
 
