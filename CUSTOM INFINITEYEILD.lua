@@ -9854,53 +9854,9 @@ addcmd('console',{},function(args, speaker)
 	notify('Console','Press F9 to open the console')
 end)
 
-addcmd('explorer',{'dex'},function(args, speaker)
-    notify("Loading",'Hold on a sec')
-    local getobjects = function(a)
-        local Objects = {}
-        if a then
-            local b = InsertService:LoadLocalAsset(a)
-            if b then 
-                table.insert(Objects, b) 
-            end
-        end
-        return Objects
-    end
-    
-    local Dex = getobjects("rbxassetid://10055842438")[1]
-    Dex.Parent = PARENT
-    
-    local function Load(Obj, Url)
-        local function GiveOwnGlobals(Func, Script)
-            local Fenv, RealFenv, FenvMt = {}, {script = Script}, {}
-            FenvMt.__index = function(a,b)
-                return RealFenv[b] == nil and getgenv()[b] or RealFenv[b]
-            end
-            FenvMt.__newindex = function(a, b, c)
-                if RealFenv[b] == nil then 
-                    getgenv()[b] = c 
-                else 
-                    RealFenv[b] = c 
-                end
-            end
-            setmetatable(Fenv, FenvMt)
-            pcall(setfenv, Func, Fenv)
-            return Func
-        end
-    
-        local function LoadScripts(_, Script)
-            if Script:IsA("LocalScript") then
-                coroutine.wrap(function()
-                    GiveOwnGlobals(loadstring(Script.Source,"="..Script:GetFullName()), Script)()
-                end)()
-            end
-            table.foreach(Script:GetChildren(), LoadScripts)
-        end
-    
-        LoadScripts(nil, Obj)
-    end
-    
-    Load(Dex)
+addcmd('explorer', {'dex'}, function(args, speaker)
+	notify('Loading', 'Hold on a sec')
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
 end)
 
 addcmd('remotespy',{'rspy'},function(args, speaker)
